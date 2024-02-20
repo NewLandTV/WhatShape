@@ -12,8 +12,9 @@ model.load_state_dict(torch.load("Model.pth"))
 model.eval()
 
 # Export onnx
-x = torch.randn(batchSize, 1, 28, 28, requires_grad = True)
-out = model(x)
+x = torch.randn(batchSize, 3, 28, 28, requires_grad = True)
+outputs = model(x)
+_, predicted = torch.max(outputs.data, 1)
 path = "Model.onnx"
 
 torch.onnx.export(
@@ -21,7 +22,7 @@ torch.onnx.export(
     x,
     path,
     export_params = True,
-    opset_version = 10,
+    opset_version = 13,
     do_constant_folding = True,
     input_names = ["input"],
     output_names = ["output"],
