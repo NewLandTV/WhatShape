@@ -3,6 +3,7 @@ Dataset/
 
 # Model
 *.pth
+*.onnx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
