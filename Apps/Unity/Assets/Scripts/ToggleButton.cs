@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ToggleButton : MonoBehaviour, IPointerClickHandler
+public class ToggleButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {
     private Color originColor;
     public Color onColor;
@@ -17,9 +17,23 @@ public class ToggleButton : MonoBehaviour, IPointerClickHandler
         originColor = image.color;
     }
 
+    public void SetOn(bool value)
+    {
+        image.color = (IsOn = value) ? onColor : originColor;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!Input.GetMouseButton(0))
+        {
+            return;
+        }
+
+        SetOn(!IsOn);
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        IsOn = !IsOn;
-        image.color = IsOn ? onColor : originColor;
+        SetOn(!IsOn);
     }
 }

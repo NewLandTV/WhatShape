@@ -9,6 +9,8 @@ public class WhatShape : MonoBehaviour
     private Model runtimeModel;
     public Texture2D inputTexture;
 
+    public UIPaintBoard board;
+
     private IWorker engine;
 
     [Serializable]
@@ -48,6 +50,11 @@ public class WhatShape : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Predict();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            board.ClearBoard();
         }
     }
 

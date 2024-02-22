@@ -529,8 +529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa9e23bf08e57e458c6ce77b279f99d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 5022602860645237092, guid: 96a73ee5fe8be1f42a5744fbd4b58433, type: 3}
+  model: {fileID: 5022602860645237092, guid: 62fd124ca0caee14a838f710fd555c91, type: 3}
   inputTexture: {fileID: 2800000, guid: 95fd240e32e79ce43b92d1276ea7ecba, type: 3}
+  board: {fileID: 410483257}
   prediction:
     predictedValue: 0
     predicted: []

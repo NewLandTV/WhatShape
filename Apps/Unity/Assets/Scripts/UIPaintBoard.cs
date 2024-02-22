@@ -34,4 +34,12 @@ public class UIPaintBoard : MonoBehaviour
         targetTexture.SetPixels(colors);
         targetTexture.Apply();
     }
+
+    public void ClearBoard()
+    {
+        for (int i = 0; i < targetTexture.width * targetTexture.height; i++)
+        {
+            toggleButtonList[i].SetOn(false);
+        }
+    }
 }
